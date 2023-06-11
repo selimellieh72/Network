@@ -1,0 +1,34 @@
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5rem;
+  height: 70px;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.navbar-brand:hover {
+  opacity: 0.8;
+}
+
+.navbar-nav {
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.nav-item {
+  margin: 0 2vw;
+}
+
+.nav-link:hover {
+  border-bottom: 3px solid #00f020;
+  opacity: 0.8;
+}
+
+/*# sourceMappingURL=nav.css.map */

@@ -1,0 +1,45 @@
+{%extends 'network/layout.html' %}
+{%load static%}
+
+{%block head%}
+<link rel="stylesheet" href="{%static 'network/styles/profile.css'%}">
+<link rel="stylesheet" href="{%static 'network/styles/posts.css'%}">
+<link rel="stylesheet" href="{%static 'network/styles/buttons.css'%}">
+{%endblock%}
+{%block body%}
+
+<div class="profile-wrapper">
+    <h2 class="page-title">
+        <span class="username">{{username}}</span><br>
+        
+        
+        <table class="follow-data">
+            <tr>
+                <td>Following:</td>
+                <td>{{following}}</td>
+            </tr>
+            <tr>
+                <td>Followers:</td>
+                <td>{{followers}}</td>
+            </tr>
+        </table>
+    
+    </h2>
+    {%if request.user.is_authenticated and request.user.id != user_id %}
+        <form method="post" action="{%url 'profile' user_id=user_id%}">
+            <button class="btn-secondary follow-btn" type="submit" class="btn-secondary">
+                {{amIFollowing|yesno:"Unfollow,Follow"}}
+            </button>
+            {% csrf_token %}
+        </form>
+
+    {%endif%}
+</div>
+
+
+
+
+<hr>
+{%include "network/posts.html" %}
+<script src="{% static 'network/scripts/posts.js' %}"></script>
+{%endblock%}

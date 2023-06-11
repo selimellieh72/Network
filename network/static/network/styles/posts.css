@@ -1,0 +1,82 @@
+.post {
+  margin: 1rem;
+  animation: opacitytransition 2s forwards;
+  width: 75%;
+  margin: 1rem auto;
+}
+.post a {
+  color: black;
+}
+
+.post-content {
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  padding: 0.5rem 1rem;
+  color: black;
+  background: white;
+}
+
+.post-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.post-text {
+  margin: 0.5rem 0;
+  word-wrap: break-word;
+}
+
+.like-btn {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  text-align: center;
+}
+.like-btn:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+}
+
+.like-counter {
+  color: #00f020;
+}
+
+.control-btns {
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.btn-container {
+  display: flex;
+}
+.btn-container > button {
+  flex: 1;
+}
+.btn-container :nth-child(1) {
+  border-top-left-radius: 0;
+}
+.btn-container :nth-child(2) {
+  border-top-right-radius: 0;
+}
+
+.cut-left {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+.cut-right {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+@keyframes opacitytransition {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=posts.css.map */

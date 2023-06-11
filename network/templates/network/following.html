@@ -1,0 +1,20 @@
+{%extends 'network/layout.html' %}
+{%load static%}
+
+{%block head%}
+<link rel="stylesheet" href="{%static 'network/styles/posts.css'%}">
+{%endblock%}
+{%block body%}
+
+
+<h2 class="page-title">
+    Following
+</h2>
+
+
+
+
+<hr>
+{%include "network/posts.html"%}
+<script src="{% static 'network/scripts/posts.js' %}"></script>
+{%endblock%}

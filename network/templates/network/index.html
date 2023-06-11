@@ -1,0 +1,55 @@
+{% extends "network/layout.html" %}
+{%load static%}
+{%block head%}
+<link rel="stylesheet" href="{%static 'network/styles/modal.css'%}">
+<link rel="stylesheet" href="{%static 'network/styles/posts.css'%}">
+<style>
+    #id_text{
+        width: 80%;
+    }
+    
+</style>
+{%endblock%}
+{% block body %}
+
+    
+    <h2 class="page-title">
+        All Posts
+        {%if user.is_authenticated %}
+        (Logged in as <a href="{%url 'profile' user_id=user.id %}">{{user.username}}</a>)
+        {%endif%}
+    </h2>
+    <hr>
+
+
+    {%include "network/posts.html" %}
+
+
+    {%if user.is_authenticated%}
+    <div class="spacer"></div>
+    <button  data-modalid="#addPostModal" class="btn-icon open-modal-btn floating-btn">+</button>
+    <div id="addPostModal" class="modal">
+        <div class="modal-content">
+            <center>
+            <h2>Add Post</h2>
+            <form id="post" method="post">
+               {{form}}
+               {% csrf_token %}
+            </form>
+            <div class="clear-fix"></div>
+            <div class="button-group float-right">
+                <button   class="btn-danger close-modal-btn ">
+                    Cancel
+                </button>
+                <button  form="post" type="submit" class="btn-secondary">
+                    Submit
+                </button>
+            </div>
+            </center>
+        </div>
+
+    </div>
+    {%endif%}
+    <script src="{% static 'network/scripts/modal.js' %}"></script>
+    <script src="{% static 'network/scripts/posts.js' %}"></script>
+{% endblock %}

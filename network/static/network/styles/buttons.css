@@ -1,0 +1,59 @@
+.btn-danger, .btn-icon, .btn-secondary, .btn-primary {
+  outline: none;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+  border-radius: 0.8rem;
+  color: white;
+}
+.btn-danger:disabled, .btn-icon:disabled, .btn-secondary:disabled, .btn-primary:disabled {
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  padding: 0.6rem;
+  font-weight: bold;
+  background-color: rgba(37, 0, 186, 0.8);
+}
+
+.btn-secondary {
+  padding: 0.6rem;
+  font-weight: bold;
+  background-color: #00f020;
+}
+.btn-secondary:hover {
+  background-color: rgba(0, 240, 32, 0.8);
+}
+
+.btn-icon {
+  font-size: 2.5rem;
+  padding: 0 1rem;
+  border-radius: 50%;
+  background-color: #00f020;
+}
+.btn-icon:hover {
+  background-color: rgba(0, 240, 32, 0.8);
+}
+
+.btn-danger {
+  padding: 0.6rem;
+  font-weight: bold;
+  background-color: red;
+}
+.btn-danger:hover {
+  background-color: rgba(255, 0, 0, 0.8);
+}
+
+.floating-btn {
+  position: fixed;
+  left: 50%;
+  bottom: 15px;
+  transform: translateX(-50%);
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+/*# sourceMappingURL=buttons.css.map */

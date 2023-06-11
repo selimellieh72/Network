@@ -1,0 +1,38 @@
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-show {
+  display: block;
+}
+
+.modal-content {
+  background: #2500ba;
+  width: 75%;
+  border-radius: 1rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -50%;
+}
+@media (min-width: 1028px) {
+  .modal-content {
+    width: 50%;
+  }
+}
+
+@keyframes modalOpen {
+  from {
+    bottom: -50%;
+  }
+  to {
+    bottom: 30%;
+  }
+}
+
+/*# sourceMappingURL=modal.css.map */

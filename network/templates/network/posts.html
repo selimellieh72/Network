@@ -1,0 +1,64 @@
+
+<section class="posts">
+    {%csrf_token%}
+    {%for post in posts%}
+    <div id="post{{post.id}}" class="post">
+       <div class="post-content">
+            <p class="post-text">{{post.text}}</p>
+            <div class="post-info">
+                <a  href="{%url 'profile' user_id=post.created_by.id %}"><strong>{{post.created_by}}</strong></a>
+                <em>{{post.created_at}}</em>
+            </div>
+       </div>
+        
+        <div class="btn-container">
+            
+            {%if request.user.id == post.created_by.id%}
+            <button data-postid="{{post.id}}"  class="btn-primary like-btn cut-right">
+                {{post.has_liked|yesno:'Unlike, Like'}} <span class="like-counter">({{post.likers_count}})</span>
+            </button>
+            <button data-postid="{{post.id}}" class="btn-danger cut-left editBtn">Edit</button>
+            {%else%}
+            <button {{request.user.is_authenticated|yesno:' ,disabled' }} data-postid="{{post.id}}"  class="btn-primary like-btn">
+                {{post.has_liked|yesno:'Unlike, Like'}} <span class="like-counter">({{post.likers_count}})</span>
+            </button>
+            {%endif%}
+
+        </div>
+        </div>
+    </div>
+    
+    {%if request.user.id == post.created_by.id%}
+    <div style="display: none;" id="post{{post.id}}edit" class="post">
+        <div class="post-content">
+             <textarea maxlength="256" style="width: 100%;" class="post-text form-control">{{post.text}}</textarea>
+             <div class="post-info">
+                 <a  href="{%url 'profile' user_id=post.created_by.id %}"><strong>{{post.created_by}}</strong></a>
+                 <em>{{post.created_at}}</em>
+             </div>
+        </div>
+         
+         <div class="btn-container">
+             
+             
+             <button data-postid="{{post.id}}" class="btn-primary cut-right cancelBtn">Cancel</button>
+             <button data-postid="{{post.id}}" class="btn-danger cut-left saveBtn">Save</button>
+            
+ 
+         </div>
+         </div>
+     </div>
+     {%endif%}
+    {%endfor%}
+
+
+    <div class="control-btns">
+        {%if has_previous%}
+        <a href="?page={{page_number|add:'-1'}}"><button class="btn-danger">Prev</button></a>
+        {%endif%}
+        {%if has_next%}
+        <a href="?page={{page_number|add:'1'}}"><button class="btn-secondary">Next</button></a>
+        {%endif%}    
+    </div>
+    
+</section>

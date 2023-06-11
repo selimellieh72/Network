@@ -1,0 +1,81 @@
+@use 'variables';
+.post {
+
+    margin: 1rem;
+    
+    animation: opacitytransition 2s forwards;
+    
+    width: 75%;
+    margin: 1rem auto;
+    a {
+        color: black;
+    }
+    
+  }
+
+.post-content{
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+    padding: .5rem 1rem;
+    color: black;
+    background: white;
+}
+
+
+.post-info{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.post-text{
+   margin: .5rem 0;
+   word-wrap: break-word;
+}
+
+.like-btn{
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    &:hover{
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
+    }
+    text-align: center;
+}
+.like-counter {
+    color: variables.$secondary;
+}
+
+.control-btns{
+    text-align: center;
+    padding: .5rem;
+}
+.btn-container{
+    display: flex;
+    >button{
+        flex: 1;
+    }
+    :nth-child(1){
+        border-top-left-radius: 0;
+    }
+    :nth-child(2){
+        border-top-right-radius: 0;
+    }
+}
+.cut-left{
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+.cut-right{
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+@keyframes opacitytransition {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

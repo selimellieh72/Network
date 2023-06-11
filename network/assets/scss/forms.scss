@@ -1,0 +1,21 @@
+@use 'variables';
+
+label{
+    display: block;
+}
+input.form-control, textarea.form-control {
+    
+    border: none;
+    border-radius: 1rem;
+    margin: .5rem 0;
+    outline: none;
+    font-family: inherit;
+    padding: .5rem;
+    width: 50%;
+    resize: none;
+   &:focus{
+    outline: 2px solid variables.$secondary;
+   }
+  
+}
+
