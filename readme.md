@@ -1,4 +1,7 @@
 # Network - A Social Media Web App
+
+![Login](https://github.com/selimellieh72/Network/blob/main/preview/login.png?raw=true)
+
 ## Description
 Network is a lightweight social media application built using Django and incorporating CSS animations for a seamless and visually engaging user experience. The app allows users to authenticate, login, register, add, read, and like posts.
 
